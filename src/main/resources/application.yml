@@ -24,7 +24,7 @@ spring:
           username: github账号
           password: 密码
           #指定分支
-          default-label: develop
+          default-label: master
 #设置配置中心账号密码
 security:
   user:
