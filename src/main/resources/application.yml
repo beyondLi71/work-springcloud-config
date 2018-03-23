@@ -1,0 +1,43 @@
+#对应环境
+label: dev
+#设置端口号
+server:
+  port: 7001
+#设置服务名称
+spring:
+  application:
+    name: config-server
+#  rabbitmq:
+#    host: 192.168.47.128
+#    port: 5672
+#    username: admin
+#    password: admin
+#设置git地址
+  cloud:
+    config:
+      server:
+        git:
+          #仓库地址
+          uri: https://github.com/beyondLi71/work-springcloud-{application}-conf.git
+          #对应文件夹下(根据需要的不同环境的配置文件进行相应的修改)
+          searchPaths: dev
+          username: github账号
+          password: 密码
+          #指定分支
+          default-label: develop
+#设置配置中心账号密码
+security:
+  user:
+    name: beyondLi
+    password: 123456
+#指定注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+  #instance:
+  #  instance-id: ${spring.cloud.client.ipAddress}:${server.port}
+#设置 actuator开关
+management:
+  security:
+    enabled: false
